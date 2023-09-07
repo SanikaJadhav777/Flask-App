@@ -1,0 +1,64 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+  	<script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
+	<title>Upload the File </title>
+	<style>
+	 .container {
+		border: 1px solid;
+  		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    padding: 10px;
+	    width: 50%;
+	 }
+      input[type=submit] {
+        display: inline-block;
+        background-color: #7b38d8;
+        padding: 16px;
+        width: 170px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+        font-family: "Times New Roman";
+        margin-top: 25px;
+      }
+      div{
+        text-align:center;
+        padding:3%;
+        border:thin solid black;
+      }
+
+      input[type="file"]{
+        display: none;
+      }
+
+      label{
+        cursor:pointer;
+      }
+
+      #imageName{
+        color:green;
+      }
+    </style>
+</head>
+<body>
+	<form action = "/success" method = "post" enctype="multipart/form-data">
+		<div class="container">
+			<p>Welcome {{name}}</p>
+			<div class="file_up">
+			  <label for="inputTag">
+				Select Image <br/>
+				<i class="fa fa-2x fa-camera" style="margin-top: 10px;"></i>
+				<input id="inputTag" type="file" name="file" accept="image/png, image/jpg, image/gif, image/jpeg"/>
+				<br/>
+				<span id="imageName"></span>
+			  </label>
+			</div>
+			<input type = "submit" value="Upload">
+		</div>
+	</form>
+</body>
+</html>
